@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard - Property Enhancement Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>PropertyEnhance</h1> <!-- Logo text -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="admindashboard.html" class="active">Admin Dashboard</a></li>
+                <li><a href="dashboard.html" class="cta-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-dashboard">
+            <h2>Admin Dashboard</h2>
+
+            <div class="manage-recommendations">
+                <h3>Manage Recommendations</h3>
+                <form action="/add-recommendation" method="post">
+                    <div class="form-group">
+                        <label for="recommendation">New Recommendation:</label>
+                        <input type="text" id="recommendation" name="recommendation" required>
+                    </div>
+                    <button type="submit" class="cta-button">Add/Update Recommendation</button>
+                </form>
+            </div>
+
+            <div class="user-submissions">
+                <h3>User Submissions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property Name</th>
+                            <th>Property Type</th>
+                            <th>Description</th>
+                            <th>Submitted By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunny Apartment</td>
+                            <td>Apartment</td>
+                            <td>Spacious apartment with a beautiful view.</td>
+                            <td>User123</td>
+                        </tr>
+                        <tr>
+                            <td>Cozy Cottage</td>
+                            <td>Cottage</td>
+                            <td>A quaint cottage in the countryside.</td>
+                            <td>User456</td>
+                        </tr>
+                        <!-- More user submissions can be dynamically generated here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at: info@propertyenhancement.com</p>
+        <p>&copy; 2024 PropertyEnhance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

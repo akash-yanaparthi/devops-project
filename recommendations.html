@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Recommendations - Property Enhancement Platform</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>PropertyEnhance</h1> <!-- Logo text -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/dashboard.html">Home</a></li>
+                <li><a href="/userdashboard.html">User Dashboard</a></li>
+                <li><a href="/admindashboard.html">Admin Dashboard</a></li>
+                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="/login.html" class="cta-button">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recommendations">
+            <h2>Property Enhancement Recommendations</h2>
+            <div class="filter-options">
+                <label for="category">Filter by Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="interior">Interior</option>
+                    <option value="landscaping">Landscaping</option>
+                    <option value="renovation">Renovation</option>
+                </select>
+            </div>
+
+            <div class="recommendation-cards">
+                <div class="card">
+                    <img src="https://super.homelane.com/homepage/CompleteHI-03.png" alt="Interior Design" />
+                    <h3>Modern Interior Design</h3>
+                    <p>Transform your living space with modern interior design ideas.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/13003540/pexels-photo-13003540.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Landscaping" />
+                    <h3>Beautiful Landscaping</h3>
+                    <p>Enhance your property's curb appeal with stunning landscaping.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/735319/pexels-photo-735319.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home Renovation" />
+                    <h3>Home Renovation Tips</h3>
+                    <p>Explore essential tips for a successful home renovation project.</p>
+                </div>
+                <!-- More recommendation cards can be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at: info@propertyenhancement.com</p>
+        <p>&copy; 2024 PropertyEnhance. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard - Property Enhancement Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>PropertyEnhance</h1> <!-- Logo text -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/dashboard.html">Home</a></li>
+                <li><a href="/recommendations.html">Recommendations</a></li>
+                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="/dashboard.html" class="cta-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Welcome, [User's Name]!</h2>
+            <p>Here are some options to enhance your property:</p>
+
+            <div class="property-submission">
+                <h3>Submit Property Details</h3>
+                <form action="/submit-property" method="post">
+                    <div class="form-group">
+                        <label for="propertyName">Property Name:</label>
+                        <input type="text" id="propertyName" name="propertyName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyType">Property Type:</label>
+                        <select id="propertyType" name="propertyType" required>
+                            <option value="Apartment">Apartment</option>
+                            <option value="House">House</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Cottage">Cottage</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyDescription">Description:</label>
+                        <textarea id="propertyDescription" name="propertyDescription" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit</button>
+                </form>
+            </div>
+
+            <div class="recommendations">
+                <h3>Your Personalized Recommendations</h3>
+                <ul>
+                    <li>Consider adding a garden for better aesthetics.</li>
+                    <li>Upgrade kitchen appliances to modern designs.</li>
+                    <li>Paint the walls with neutral colors for a fresh look.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at: info@propertyenhancement.com</p>
+        <p>&copy; 2024 PropertyEnhance. All rights reserved.</p>
+    </footer>
+</body>
+</html>
