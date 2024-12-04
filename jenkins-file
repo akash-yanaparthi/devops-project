@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    environment {
+        DEPLOY_DIR = '/var/www/html'
+        DEPLOY_HOST = 'your.server.com'
+        DEPLOY_USER = 'your-username'
+        SSH_KEY = credentials('your-ssh-key-id')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-repo/your-website.git'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    sh '''
+                        ssh -i $SSH_KEY $DEPLOY_USER@$DEPLOY_HOST "mkdir -p $DEPLOY_DIR"
+                        scp -i $SSH_KEY -r * $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIR
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Deployment finished.'
+        }
+
+        success {
+            echo 'Deployment was successful!'
+        }
+
+        failure {
+            echo 'Deployment failed.'
+        }
+    }
+}
